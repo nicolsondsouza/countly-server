@@ -1983,6 +1983,7 @@ window.ManageAppsView = countlyView.extend({
                     });
                 }
             });
+            Joyride.checkStart();
         });
     }
 });
