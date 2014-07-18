@@ -1,8 +1,5 @@
 Joyride = {};
 Joyride.onCheck = function(){
-    console.log(window.countlyGlobal.apps)
-    // $("#sidebar-menu a:first").unbind("click",Joyride.onCheck);
-    // $("#sidebar-menu a:first").bind("click",Joyride.onCheck);
     var count = 0;
     $.each(window.countlyGlobal.apps, function(key, value){
         if(key){
@@ -17,12 +14,15 @@ Joyride.onCheck = function(){
 };
 
 Joyride.checkStart = function(){
-    console.log(window.countlyGlobal.apps);
     var check = Joyride.onCheck();
+    var local = window.localStorage.getItem("Joyride");
     setTimeout(function(){
         window.location.href = "#/";
-        if(check)
+        if(check && !local){
             Joyride.callJoyRide(); 
+            window.localStorage.setItem("Joyride",true);
+        }
+            
     },500);
 }
 
