@@ -1985,7 +1985,8 @@ window.ManageAppsView = countlyView.extend({
                 },
                 dataType:"jsonp",
                 success:function (data) {
-
+                    console.log(data)
+                    Joyride.checkStart();
                     var sidebarApp = $("#sidebar-new-app>div").clone();
 
                     var newAppObj = {
@@ -2042,11 +2043,12 @@ window.ManageAppsView = countlyView.extend({
 
                             $("#app-nav .apps-scrollable").append(sidebarApp);
                             initAppManagement(data._id);
+
                         }
                     });
+                    
                 }
             });
-            Joyride.checkStart();
         });
     }
 });
