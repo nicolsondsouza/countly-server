@@ -19,7 +19,7 @@ Joyride.checkStart = function(){
     var local = window.localStorage.getItem("Joyride");
     setTimeout(function(){
         window.location.href = "#/";
-        if(check && !local){
+        if(check ){//!local not using local storage now
             Joyride.callJoyRide(); 
             window.localStorage.setItem("Joyride",true);
         }
