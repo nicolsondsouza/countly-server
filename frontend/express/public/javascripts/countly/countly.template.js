@@ -1309,7 +1309,7 @@ window.ResolutionView = countlyView.extend({
     },
     renderCommon:function (isRefresh) {
         var resolutionData = countlyDeviceDetails.getResolutionData();
-
+        console.log(resolutionData);
         this.templateData = {
             "page-title":jQuery.i18n.map["resolutions.title"],
             "logo-class":"resolutions",

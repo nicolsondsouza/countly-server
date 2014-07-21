@@ -18,7 +18,7 @@
         if (!countlyCommon.DEBUG) {
             _activeAppKey = countlyCommon.ACTIVE_APP_KEY;
             _initialized = true;
-
+            console.log(countlyCommon.API_PARTS.data.r)
             return $.ajax({
                 type:"GET",
                 url:countlyCommon.API_PARTS.data.r,
@@ -29,6 +29,7 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
+                    console.log(json);
                     _deviceDetailsDb = json;
                     setMeta();
                 }
@@ -48,7 +49,7 @@
                 _activeAppKey = countlyCommon.ACTIVE_APP_KEY;
                 return countlyDeviceDetails.initialize();
             }
-
+            console.log(countlyCommon.API_PARTS.data.r)
             return $.ajax({
                 type:"GET",
                 url:countlyCommon.API_PARTS.data.r,
@@ -60,6 +61,7 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
+                    console.log(json)
                     countlyCommon.extendDbObj(_deviceDetailsDb, json);
                     setMeta();
                 }
@@ -136,7 +138,8 @@
     };
 
     countlyDeviceDetails.getResolutionData = function () {
-        var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.clearDeviceDetailsObject, [
+        var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.
+            clearDeviceDetailsObject, [
             {
                 name:"resolution",
                 func:function (rangeArr, dataObj) {
@@ -276,6 +279,7 @@
         if (_deviceDetailsDb['meta']) {
             _os = (_deviceDetailsDb['meta']['os']) ? _deviceDetailsDb['meta']['os'] : [];
             _resolutions = (_deviceDetailsDb['meta']['resolutions']) ? _deviceDetailsDb['meta']['resolutions'] : [];
+            _density = (_deviceDetailsDb['meta']['_density']) ? _deviceDetailsDb['meta']['_density'] : [];
             _os_versions = (_deviceDetailsDb['meta']['os_versions']) ? _deviceDetailsDb['meta']['os_versions'] : [];
         } else {
             _os = [];
@@ -286,6 +290,7 @@
         if (_os_versions.length) {
             _os_versions = _os_versions.join(",").replace(/\./g, ":").split(",");
         }
+        console.log(_deviceDetailsDb['meta'])
     }
 
     function fixOSVersion(osName) {
