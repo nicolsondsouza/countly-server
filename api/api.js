@@ -20,6 +20,7 @@ http.globalAgent.maxSockets = common.config.api.max_sockets || 1024;
 // Checks app_key from the http request against "apps" collection.
 // This is the first step of every write request to API.
 function validateAppForWriteAPI(params) {
+    
     common.db.collection('apps').findOne({'key':params.qstring.app_key}, function (err, app) {
         if (!app) {
             if (common.config.api.safe) {
@@ -39,26 +40,33 @@ function validateAppForWriteAPI(params) {
         common.db.collection('sessions').update({'_id':params.app_id}, {'$inc':updateSessions}, {'upsert':true}, function(err, res){});
 
         if (params.qstring.events) {
+            //console.log("params.qstring.events");
             countlyApi.data.events.processEvents(params);
         } else if (common.config.api.safe) {
+            //console.log("common.config.api.safe");
             common.returnMessage(params, 200, 'Success');
         }
 
         if (params.qstring.begin_session) {
+            // console.log("params.qstring.begin_session");
             countlyApi.data.usage.beginUserSession(params);
         } else if (params.qstring.end_session) {
             if (params.qstring.session_duration) {
+                // console.log("params.qstring.session_duration");
                 countlyApi.data.usage.processSessionDuration(params, function () {
                     countlyApi.data.usage.endUserSession(params);
                 });
             } else {
+                //console.log("params.qstring.session_duration.else");
                 countlyApi.data.usage.endUserSession(params);
             }
         } else if (params.qstring.session_duration) {
+            //console.log("params.qstring.session_duration");
             countlyApi.data.usage.processSessionDuration(params);
         } else {
             return false;
         }
+        // console.log(params.qstring)
     });
 }
 
@@ -95,7 +103,8 @@ function validateUserForDataReadAPI(params, callback, callbackParam) {
             params.app_id = app['_id'];
             params.appTimezone = app['timezone'];
             params.time = common.initTimeObj(params.appTimezone, params.qstring.timestamp);
-
+            // console.log(Math.random());
+            // console.log(callbackParam);
             if (callbackParam) {
                 callback(callbackParam, params);
             } else {
@@ -163,10 +172,10 @@ if (cluster.isMaster) {
         switch (apiPath) {
             case '/i/bulk':
             {
-
+                console.log("/i/bulk");
                 var requests = queryString.requests,
                     appKey = queryString.app_key;
-
+                console.log(requests);
                 if (requests) {
                     try {
                         requests = JSON.parse(requests);
@@ -230,6 +239,7 @@ if (cluster.isMaster) {
             }
             case '/i/users':
             {
+                console.log("/i/users");
                 if (params.qstring.args) {
                     try {
                         params.qstring.args = JSON.parse(params.qstring.args);
@@ -262,6 +272,7 @@ if (cluster.isMaster) {
             }
             case '/i/apps':
             {
+                console.log("/i/apps");
                 if (params.qstring.args) {
                     try {
                         params.qstring.args = JSON.parse(params.qstring.args);
@@ -297,6 +308,7 @@ if (cluster.isMaster) {
             }
             case '/i':
             {
+                // console.log("/i");
                 var ipAddress = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
 
                 params.ip_address =  params.qstring.ip_address || ipAddress.split(",")[0];
@@ -401,7 +413,7 @@ if (cluster.isMaster) {
                     common.returnMessage(params, 400, 'Missing parameter "app_id"');
                     return false;
                 }
-
+                // console.log(params.qstring.method)
                 switch (params.qstring.method) {
                     case 'locations':
                     case 'sessions':
@@ -426,7 +438,6 @@ if (cluster.isMaster) {
                             } catch (SyntaxError) {
                                 console.log('Parse events array failed');
                             }
-
                             validateUserForDataReadAPI(params, countlyApi.data.fetch.fetchMergedEventData);
                         } else {
                             validateUserForDataReadAPI(params, countlyApi.data.fetch.prefetchEventData, params.qstring.method);

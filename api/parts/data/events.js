@@ -5,6 +5,7 @@ var events = {},
 (function (events) {
 
     events.processEvents = function(params) {
+    console.log(params.qstring)
         var events = [],
             eventCollections = {},
             eventSegments = {},
