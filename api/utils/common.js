@@ -105,10 +105,10 @@ var common = {},
 
     // Creates a time object in the format object["2012.7.20.property"] = increment.
     common.fillTimeObject = function (params, object, property, increment) {
-        console.log(params.qstring);
-        console.log(object);
-        console.log(property);
-        console.log(increment);
+        // console.log(params.qstring);
+        // console.log(object);
+        // console.log(property);
+        // console.log(increment);
         var increment = (increment) ? increment : 1,
             timeObj = params.time;
 
@@ -135,7 +135,7 @@ var common = {},
         {
             object[timeObj.yearly + ".w" + timeObj.weekly + '.' + property] = increment;
         }
-        console.log(object)
+        // console.log(object)
     };
 
     // Adjusts the time to current app's configured timezone appTimezone and returns a time object.

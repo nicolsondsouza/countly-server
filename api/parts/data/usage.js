@@ -350,12 +350,12 @@ var usage = {},
             });
             return false;
         }
-        console.log("common.dbUserMap");
-        console.log(common.dbUserMap)
+        // console.log("common.dbUserMap");
+        // console.log(common.dbUserMap)
         var predefinedMetrics = [
             { db: "devices", metrics: [{ name: "_device", set: "devices", short_code: common.dbUserMap['device'] }] },
             { db: "carriers", metrics: [{ name: "_carrier", set: "carriers", short_code: common.dbUserMap['carrier'] }] },
-            { db: "device_details", metrics: [{ name: "_os", set: "os", short_code: common.dbUserMap['platform'] }, { name: "_os_version", set: "os_versions", short_code: common.dbUserMap['platform_version'] }, { name: "_resolution", set: "resolutions" },{ name: "_density:", set: "_density" }] },
+            { db: "device_details", metrics: [{ name: "_os", set: "os", short_code: common.dbUserMap['platform'] }, { name: "_os_version", set: "os_versions", short_code: common.dbUserMap['platform_version'] }, { name: "_resolution", set: "resolutions" },{ name: "_density", set: "densitys" }] },
             { db: "app_versions", metrics: [{ name: "_app_version", set: "app_versions", short_code: common.dbUserMap['app_version'] }] }
         ];
         // console.log(predefinedMetrics[2].metrics)
@@ -367,7 +367,9 @@ var usage = {},
             for (var j=0; j < predefinedMetrics[i].metrics.length; j++) {
                 var tmpMetric = predefinedMetrics[i].metrics[j],
                     recvMetricValue = params.qstring.metrics[tmpMetric.name];
-                    console.log(recvMetricValue)
+                    // console.log(params.qstring.metrics._density)
+                    // console.log(tmpMetric)
+                    // console.log(recvMetricValue)
                 if (recvMetricValue) {
                     var escapedMetricVal = recvMetricValue.replace(/^\$/, "").replace(/\./g, ":");
                     needsUpdate = true;
@@ -375,7 +377,7 @@ var usage = {},
                     common.fillTimeObject(params, tmpTimeObj, escapedMetricVal + '.' + common.dbMap['total']);
 
                     if (isNewUser) {
-                        console.log("isNewUser")
+                        // console.log("isNewUser")
                         common.fillTimeObject(params, tmpTimeObj, escapedMetricVal + '.' + common.dbMap['new']);
                         common.fillTimeObject(params, tmpTimeObj, escapedMetricVal + '.' + common.dbMap['unique']);
                     } else if (tmpMetric.short_code && user[tmpMetric.short_code] != escapedMetricVal) {
@@ -397,7 +399,7 @@ var usage = {},
            
             
             if(predefinedMetrics[i].db == "device_details")
-                console.log(tmpSet);
+                // console.log(tmpSet);
             if (needsUpdate) {
                 // console.log(predefinedMetrics[i]);
 

@@ -18,7 +18,7 @@
         if (!countlyCommon.DEBUG) {
             _activeAppKey = countlyCommon.ACTIVE_APP_KEY;
             _initialized = true;
-            console.log(countlyCommon.API_PARTS.data.r)
+            // console.log(countlyCommon.API_PARTS.data.r)
             return $.ajax({
                 type:"GET",
                 url:countlyCommon.API_PARTS.data.r,
@@ -49,7 +49,7 @@
                 _activeAppKey = countlyCommon.ACTIVE_APP_KEY;
                 return countlyDeviceDetails.initialize();
             }
-            console.log(countlyCommon.API_PARTS.data.r)
+            // console.log(countlyCommon.API_PARTS.data.r)
             return $.ajax({
                 type:"GET",
                 url:countlyCommon.API_PARTS.data.r,
@@ -137,7 +137,77 @@
         return countlyCommon.extractBarData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.clearDeviceDetailsObject);
     };
 
-    countlyDeviceDetails.getResolutionData = function () {
+    countlyDeviceDetails.getDensityBars = function () {
+        return countlyCommon.extractBarData(_deviceDetailsDb, _densitys, countlyDeviceDetails.clearDeviceDetailsObject);
+    };
+
+    countlyDeviceDetails.getDensityData = function () {
+        var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _densitys, countlyDeviceDetails.
+
+            clearDeviceDetailsObject, [
+            {
+                name:"densitys",
+                func:function (rangeArr, dataObj) {
+                    console.log(rangeArr+"***"+dataObj)
+                    return rangeArr;
+                }
+            },
+            {
+                name:"width",
+                func:function (rangeArr, dataObj) {
+                    return 0;//"<a>" + rangeArr.split("x")[0] + "</a>";
+                }
+            },
+            {
+                name:"height",
+                func:function (rangeArr, dataObj) {
+                    return 0;//"<a>" + rangeArr.split("x")[1] + "</a>";
+                }
+            },
+            { "name":"t" },
+            { "name":"u" },
+            { "name":"n" }
+        ]);
+        console.log("chartData");
+            console.log(chartData);
+        console.log(_.pluck(chartData.chartData, 'densitys'))//hold the value of the first column
+        var densitys = _.pluck(chartData.chartData, 'densitys'),
+            densityTotal = _.pluck(chartData.chartData, 'u'),
+            densityNew = _.pluck(chartData.chartData, 'n'),
+            chartData2 = [],
+            chartData3 = [];
+
+        var sum = _.reduce(densityTotal, function (memo, num) {
+            return memo + num;
+        }, 0);
+
+        for (var i = 0; i < densitys.length; i++) {
+            var percent = (densityTotal[i] / sum) * 100;
+            chartData2[i] = {data:[
+                [0, densityTotal[i]]
+            ], label:densitys[i]};
+        }
+
+        var sum2 = _.reduce(densityNew, function (memo, num) {
+            return memo + num;
+        }, 0);
+
+        for (var i = 0; i < densitys.length; i++) {
+            var percent = (densityNew[i] / sum) * 100;
+            chartData3[i] = {data:[
+                [0, densityNew[i]]
+            ], label:densitys[i]};
+        }
+
+        chartData.chartDPTotal = {};
+        chartData.chartDPTotal.dp = chartData2;
+
+        chartData.chartDPNew = {};
+        chartData.chartDPNew.dp = chartData3;
+
+        return chartData;
+    };
+countlyDeviceDetails.getResolutionData = function () {
         var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.
             clearDeviceDetailsObject, [
             {
@@ -279,18 +349,20 @@
         if (_deviceDetailsDb['meta']) {
             _os = (_deviceDetailsDb['meta']['os']) ? _deviceDetailsDb['meta']['os'] : [];
             _resolutions = (_deviceDetailsDb['meta']['resolutions']) ? _deviceDetailsDb['meta']['resolutions'] : [];
-            _density = (_deviceDetailsDb['meta']['_density']) ? _deviceDetailsDb['meta']['_density'] : [];
+            _densitys = (_deviceDetailsDb['meta']['densitys']) ? _deviceDetailsDb['meta']['densitys'] : [];
             _os_versions = (_deviceDetailsDb['meta']['os_versions']) ? _deviceDetailsDb['meta']['os_versions'] : [];
+            // console.log(_deviceDetailsDb['meta'])
         } else {
             _os = [];
             _resolutions = [];
+            _densitys = [];
             _os_versions = [];
         }
 
         if (_os_versions.length) {
             _os_versions = _os_versions.join(",").replace(/\./g, ":").split(",");
         }
-        console.log(_deviceDetailsDb['meta'])
+        // console.log(_deviceDetailsDb['meta'])
     }
 
     function fixOSVersion(osName) {

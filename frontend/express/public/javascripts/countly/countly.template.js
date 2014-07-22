@@ -1371,8 +1371,8 @@ window.DensityView = countlyView.extend({
         return $.when(countlyDeviceDetails.initialize()).then(function () {});
     },
     renderCommon:function (isRefresh) {
-        var resolutionData = countlyDeviceDetails.getResolutionData();
-
+        var densityData = countlyDeviceDetails.getDensityData();
+        console.log(densityData)
         this.templateData = {
             "page-title":jQuery.i18n.map["density.title"],
             "logo-class":"resolutions",
@@ -1383,13 +1383,13 @@ window.DensityView = countlyView.extend({
             },
             "chart-data":{
                 "columnCount":6,
-                "columns":[jQuery.i18n.map["resolutions.table.resolution"], jQuery.i18n.map["resolutions.table.width"], jQuery.i18n.map["resolutions.table.height"], jQuery.i18n.map["common.table.total-sessions"], jQuery.i18n.map["common.table.total-users"], jQuery.i18n.map["common.table.new-users"]],
+                "columns":[jQuery.i18n.map["density.table.density"], jQuery.i18n.map["density.table.width"], jQuery.i18n.map["density.table.height"], jQuery.i18n.map["common.table.total-sessions"], jQuery.i18n.map["common.table.total-users"], jQuery.i18n.map["common.table.new-users"]],
                 "rows":[]
             },
             "chart-helper":"resolutions.chart"
         };
 
-        this.templateData["chart-data"]["rows"] = resolutionData.chartData;
+        this.templateData["chart-data"]["rows"] = densityData.chartData;
 
         if (!isRefresh) {
             $(this.el).html(this.template(this.templateData));
@@ -1400,8 +1400,8 @@ window.DensityView = countlyView.extend({
                 self.sortList = sorter.target.config.sortList;
             });
 
-            countlyCommon.drawGraph(resolutionData.chartDPTotal, "#dashboard-graph", "pie");
-            countlyCommon.drawGraph(resolutionData.chartDPNew, "#dashboard-graph2", "pie");
+            countlyCommon.drawGraph(densityData.chartDPTotal, "#dashboard-graph", "pie");
+            countlyCommon.drawGraph(densityData.chartDPNew, "#dashboard-graph2", "pie");
         }
     },
     refresh:function () {
@@ -1418,7 +1418,7 @@ window.DensityView = countlyView.extend({
             $(self.el).find(".sortable tbody").replaceWith(newPage.find(".sortable tbody"));
             $(self.el).find(".dashboard-summary").replaceWith(newPage.find(".dashboard-summary"));
 
-            var resolutionData = countlyDeviceDetails.getResolutionData();
+            var resolutionData = countlyDeviceDetails.getDensityData();
 
             countlyCommon.drawGraph(resolutionData.chartDPTotal, "#dashboard-graph", "pie");
             countlyCommon.drawGraph(resolutionData.chartDPNew, "#dashboard-graph2", "pie");
