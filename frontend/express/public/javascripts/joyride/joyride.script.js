@@ -1,6 +1,7 @@
 Joyride = {};
 Joyride.onCheck = function(){
     var count = 0;
+    console.log(window.countlyGlobal.apps);
     $.each(window.countlyGlobal.apps, function(key, value){
         if(key){
             count++
@@ -18,12 +19,12 @@ Joyride.checkStart = function(){
     var local = window.localStorage.getItem("Joyride");
     setTimeout(function(){
         window.location.href = "#/";
-        if(check && !local){
+        if(check ){//!local not using local storage now
             Joyride.callJoyRide(); 
             window.localStorage.setItem("Joyride",true);
         }
             
-    },500);
+    },100);
 }
 
 Joyride.callJoyRide = function(){

@@ -152,6 +152,7 @@ var fetch = {},
     };
 
     fetch.fetchTimeData = function (collection, params) {
+        // console.log(collection);
 
         var fetchFields = {};
 
@@ -169,7 +170,7 @@ var fetch = {},
                 result = {};
                 result[now.getFullYear()] = {};
             }
-
+            // console.log(result);
             common.returnOutput(params, result);
         });
     };
