@@ -137,6 +137,10 @@
         return countlyCommon.extractBarData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.clearDeviceDetailsObject);
     };
 
+    countlyDeviceDetails.getDensityBars = function () {
+        return countlyCommon.extractBarData(_deviceDetailsDb, _densitys, countlyDeviceDetails.clearDeviceDetailsObject);
+    };
+
     countlyDeviceDetails.getResolutionData = function () {
         var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.
             clearDeviceDetailsObject, [
@@ -279,11 +283,13 @@
         if (_deviceDetailsDb['meta']) {
             _os = (_deviceDetailsDb['meta']['os']) ? _deviceDetailsDb['meta']['os'] : [];
             _resolutions = (_deviceDetailsDb['meta']['resolutions']) ? _deviceDetailsDb['meta']['resolutions'] : [];
-            _density = (_deviceDetailsDb['meta']['_density']) ? _deviceDetailsDb['meta']['_density'] : [];
+            _densitys = (_deviceDetailsDb['meta']['densitys']) ? _deviceDetailsDb['meta']['densitys'] : [];
             _os_versions = (_deviceDetailsDb['meta']['os_versions']) ? _deviceDetailsDb['meta']['os_versions'] : [];
+            console.log(_deviceDetailsDb['meta'])
         } else {
             _os = [];
             _resolutions = [];
+            _densitys = [];
             _os_versions = [];
         }
 
