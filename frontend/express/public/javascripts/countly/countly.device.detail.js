@@ -143,6 +143,7 @@
 
     countlyDeviceDetails.getDensityData = function () {
         var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _densitys, countlyDeviceDetails.
+
             clearDeviceDetailsObject, [
             {
                 name:"densitys",
@@ -167,6 +168,8 @@
             { "name":"u" },
             { "name":"n" }
         ]);
+        console.log("chartData");
+            console.log(chartData);
         console.log(_.pluck(chartData.chartData, 'densitys'))//hold the value of the first column
         var densitys = _.pluck(chartData.chartData, 'densitys'),
             densityTotal = _.pluck(chartData.chartData, 'u'),
