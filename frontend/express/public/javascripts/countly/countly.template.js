@@ -1383,7 +1383,7 @@ window.DensityView = countlyView.extend({
             },
             "chart-data":{
                 "columnCount":6,
-                "columns":[jQuery.i18n.map["density.table.density"], jQuery.i18n.map["density.table.width"], jQuery.i18n.map["density.table.height"], jQuery.i18n.map["common.table.total-sessions"], jQuery.i18n.map["common.table.total-users"], jQuery.i18n.map["common.table.new-users"]],
+                "columns":[jQuery.i18n.map["density.table.density"], /*jQuery.i18n.map["density.table.width"], jQuery.i18n.map["density.table.height"],*/ jQuery.i18n.map["common.table.total-sessions"], jQuery.i18n.map["common.table.total-users"], jQuery.i18n.map["common.table.new-users"]],
                 "rows":[]
             },
             "chart-helper":"resolutions.chart"
