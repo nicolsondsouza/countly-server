@@ -18,7 +18,6 @@
         if (!countlyCommon.DEBUG) {
             _activeAppKey = countlyCommon.ACTIVE_APP_KEY;
             _initialized = true;
-            console.log(countlyCommon.API_PARTS.data.r)
             return $.ajax({
                 type:"GET",
                 url:countlyCommon.API_PARTS.data.r,
@@ -29,7 +28,6 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
-                    console.log(json);
                     _deviceDetailsDb = json;
                     setMeta();
                 }
@@ -49,7 +47,6 @@
                 _activeAppKey = countlyCommon.ACTIVE_APP_KEY;
                 return countlyDeviceDetails.initialize();
             }
-            console.log(countlyCommon.API_PARTS.data.r)
             return $.ajax({
                 type:"GET",
                 url:countlyCommon.API_PARTS.data.r,
@@ -140,7 +137,68 @@
     countlyDeviceDetails.getDensityBars = function () {
         return countlyCommon.extractBarData(_deviceDetailsDb, _densitys, countlyDeviceDetails.clearDeviceDetailsObject);
     };
+    countlyDeviceDetails.getDensityData = function () {
+        var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _densitys, countlyDeviceDetails.
+            clearDeviceDetailsObject, [
+            {
+                name:"resolution",
+                func:function (rangeArr, dataObj) {
+                    return rangeArr;
+                }
+            },
+            {
+                name:"width",
+                func:function (rangeArr, dataObj) {
+                    return "<a>" + rangeArr.split("x")[0] + "</a>";
+                }
+            },
+            {
+                name:"height",
+                func:function (rangeArr, dataObj) {
+                    return "<a>" + rangeArr.split("x")[1] + "</a>";
+                }
+            },
+            { "name":"t" },
+            { "name":"u" },
+            { "name":"n" }
+        ]);
 
+        var resolutions = _.pluck(chartData.chartData, 'resolution'),
+            resolutionTotal = _.pluck(chartData.chartData, 'u'),
+            resolutionNew = _.pluck(chartData.chartData, 'n'),
+            chartData2 = [],
+            chartData3 = [];
+
+        var sum = _.reduce(resolutionTotal, function (memo, num) {
+            return memo + num;
+        }, 0);
+
+        for (var i = 0; i < resolutions.length; i++) {
+            var percent = (resolutionTotal[i] / sum) * 100;
+            chartData2[i] = {data:[
+                [0, resolutionTotal[i]]
+            ], label:resolutions[i]};
+        }
+
+        var sum2 = _.reduce(resolutionNew, function (memo, num) {
+            return memo + num;
+        }, 0);
+
+        for (var i = 0; i < resolutions.length; i++) {
+            var percent = (resolutionNew[i] / sum) * 100;
+            chartData3[i] = {data:[
+                [0, resolutionNew[i]]
+            ], label:resolutions[i]};
+        }
+
+        chartData.chartDPTotal = {};
+        chartData.chartDPTotal.dp = chartData2;
+
+        chartData.chartDPNew = {};
+        chartData.chartDPNew.dp = chartData3;
+
+        return chartData;
+    };
     countlyDeviceDetails.getResolutionData = function () {
         var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.
             clearDeviceDetailsObject, [
@@ -285,7 +343,7 @@
             _resolutions = (_deviceDetailsDb['meta']['resolutions']) ? _deviceDetailsDb['meta']['resolutions'] : [];
             _densitys = (_deviceDetailsDb['meta']['densitys']) ? _deviceDetailsDb['meta']['densitys'] : [];
             _os_versions = (_deviceDetailsDb['meta']['os_versions']) ? _deviceDetailsDb['meta']['os_versions'] : [];
-            console.log(_deviceDetailsDb['meta'])
+            console.log(_densitys);
         } else {
             _os = [];
             _resolutions = [];
@@ -296,7 +354,6 @@
         if (_os_versions.length) {
             _os_versions = _os_versions.join(",").replace(/\./g, ":").split(",");
         }
-        console.log(_deviceDetailsDb['meta'])
     }
 
     function fixOSVersion(osName) {

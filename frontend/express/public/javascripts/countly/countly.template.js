@@ -1371,7 +1371,7 @@ window.DensityView = countlyView.extend({
         return $.when(countlyDeviceDetails.initialize()).then(function () {});
     },
     renderCommon:function (isRefresh) {
-        var resolutionData = countlyDeviceDetails.getResolutionData();
+        var resolutionData = countlyDeviceDetails.getDensityData();
 
         this.templateData = {
             "page-title":jQuery.i18n.map["density.title"],
