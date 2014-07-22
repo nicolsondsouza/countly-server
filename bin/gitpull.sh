@@ -1,4 +1,5 @@
-sudo stop countly-supervisor
+#sudo stop countly-supervisor
+#on development not using countly-supervisor
 
 cd ..
 cd api
@@ -14,4 +15,5 @@ git pull -u origin master
 cd ..
 sudo mv time ./countly/api/node_modules/
 
-sudo start countly-supervisor
+#sudo start countly-supervisor
+#on development not using countly-supervisor
