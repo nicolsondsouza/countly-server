@@ -95,7 +95,8 @@ function validateUserForDataReadAPI(params, callback, callbackParam) {
             params.app_id = app['_id'];
             params.appTimezone = app['timezone'];
             params.time = common.initTimeObj(params.appTimezone, params.qstring.timestamp);
-
+            // console.log(Math.random());
+            // console.log(params);
             if (callbackParam) {
                 callback(callbackParam, params);
             } else {
@@ -426,7 +427,6 @@ if (cluster.isMaster) {
                             } catch (SyntaxError) {
                                 console.log('Parse events array failed');
                             }
-
                             validateUserForDataReadAPI(params, countlyApi.data.fetch.fetchMergedEventData);
                         } else {
                             validateUserForDataReadAPI(params, countlyApi.data.fetch.prefetchEventData, params.qstring.method);
@@ -453,7 +453,7 @@ if (cluster.isMaster) {
                     common.returnMessage(params, 400, 'Missing parameter "app_id"');
                     return false;
                 }
-
+                
                 switch (paths[3]) {
                     case 'dashboard':
                         validateUserForDataReadAPI(params, countlyApi.data.fetch.fetchDashboard);

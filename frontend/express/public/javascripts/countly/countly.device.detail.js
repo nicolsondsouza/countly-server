@@ -29,6 +29,7 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
+                    console.log(json);
                     _deviceDetailsDb = json;
                     setMeta();
                 }
@@ -60,6 +61,7 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
+                    console.log(json)
                     countlyCommon.extendDbObj(_deviceDetailsDb, json);
                     setMeta();
                 }
@@ -136,7 +138,8 @@
     };
 
     countlyDeviceDetails.getResolutionData = function () {
-        var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.clearDeviceDetailsObject, [
+        var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.
+            clearDeviceDetailsObject, [
             {
                 name:"resolution",
                 func:function (rangeArr, dataObj) {
