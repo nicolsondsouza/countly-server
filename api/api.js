@@ -104,7 +104,7 @@ function validateUserForDataReadAPI(params, callback, callbackParam) {
             params.appTimezone = app['timezone'];
             params.time = common.initTimeObj(params.appTimezone, params.qstring.timestamp);
             // console.log(Math.random());
-            // console.log(callbackParam);
+            // console.log(params);
             if (callbackParam) {
                 callback(callbackParam, params);
             } else {
@@ -175,12 +175,12 @@ if (cluster.isMaster) {
                 console.log("/i/bulk");
                 var requests = queryString.requests,
                     appKey = queryString.app_key;
-                console.log(requests);
+                // console.log(requests);
                 if (requests) {
                     try {
                         requests = JSON.parse(requests);
                     } catch (SyntaxError) {
-                        console.log('Parse bulk JSON failed');
+                        // console.log('Parse bulk JSON failed');
                     }
                 } else {
                     common.returnMessage(params, 400, 'Missing parameter "requests"');
@@ -239,12 +239,12 @@ if (cluster.isMaster) {
             }
             case '/i/users':
             {
-                console.log("/i/users");
+                // console.log("/i/users");
                 if (params.qstring.args) {
                     try {
                         params.qstring.args = JSON.parse(params.qstring.args);
                     } catch (SyntaxError) {
-                        console.log('Parse ' + apiPath + ' JSON failed');
+                        // console.log('Parse ' + apiPath + ' JSON failed');
                     }
                 }
 
@@ -272,12 +272,12 @@ if (cluster.isMaster) {
             }
             case '/i/apps':
             {
-                console.log("/i/apps");
+                // console.log("/i/apps");
                 if (params.qstring.args) {
                     try {
                         params.qstring.args = JSON.parse(params.qstring.args);
                     } catch (SyntaxError) {
-                        console.log('Parse ' + apiPath + ' JSON failed');
+                        // console.log('Parse ' + apiPath + ' JSON failed');
                     }
                 }
 
@@ -340,7 +340,7 @@ if (cluster.isMaster) {
                         }
 
                     } catch (SyntaxError) {
-                        console.log('Parse metrics JSON failed');
+                        // console.log('Parse metrics JSON failed');
                     }
                 }
 
@@ -348,7 +348,7 @@ if (cluster.isMaster) {
                     try {
                         params.qstring.events = JSON.parse(params.qstring.events);
                     } catch (SyntaxError) {
-                        console.log('Parse events JSON failed');
+                        // console.log('Parse events JSON failed');
                     }
                 }
 
@@ -436,8 +436,9 @@ if (cluster.isMaster) {
                             try {
                                 params.qstring.events = JSON.parse(params.qstring.events);
                             } catch (SyntaxError) {
-                                console.log('Parse events array failed');
+                                // console.log('Parse events array failed');
                             }
+
                             validateUserForDataReadAPI(params, countlyApi.data.fetch.fetchMergedEventData);
                         } else {
                             validateUserForDataReadAPI(params, countlyApi.data.fetch.prefetchEventData, params.qstring.method);
@@ -464,7 +465,7 @@ if (cluster.isMaster) {
                     common.returnMessage(params, 400, 'Missing parameter "app_id"');
                     return false;
                 }
-
+                
                 switch (paths[3]) {
                     case 'dashboard':
                         validateUserForDataReadAPI(params, countlyApi.data.fetch.fetchDashboard);

@@ -687,7 +687,7 @@
             },
             { "name":"t" }
         ]);
-
+        // console.log(rangeData.chartData)//
         var rangeNames = _.pluck(rangeData.chartData, 'range'),
             rangeTotal = _.pluck(rangeData.chartData, 't'),
             barData = [],

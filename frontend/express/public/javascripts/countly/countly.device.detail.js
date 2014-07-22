@@ -18,6 +18,7 @@
         if (!countlyCommon.DEBUG) {
             _activeAppKey = countlyCommon.ACTIVE_APP_KEY;
             _initialized = true;
+            // console.log(countlyCommon.API_PARTS.data.r)
             return $.ajax({
                 type:"GET",
                 url:countlyCommon.API_PARTS.data.r,
@@ -28,6 +29,7 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
+                    console.log(json);
                     _deviceDetailsDb = json;
                     setMeta();
                 }
@@ -47,6 +49,7 @@
                 _activeAppKey = countlyCommon.ACTIVE_APP_KEY;
                 return countlyDeviceDetails.initialize();
             }
+            // console.log(countlyCommon.API_PARTS.data.r)
             return $.ajax({
                 type:"GET",
                 url:countlyCommon.API_PARTS.data.r,
@@ -137,58 +140,60 @@
     countlyDeviceDetails.getDensityBars = function () {
         return countlyCommon.extractBarData(_deviceDetailsDb, _densitys, countlyDeviceDetails.clearDeviceDetailsObject);
     };
+
     countlyDeviceDetails.getDensityData = function () {
         var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _densitys, countlyDeviceDetails.
             clearDeviceDetailsObject, [
             {
-                name:"resolution",
+                name:"densitys",
                 func:function (rangeArr, dataObj) {
+                    console.log(rangeArr+"***"+dataObj)
                     return rangeArr;
                 }
             },
             {
                 name:"width",
                 func:function (rangeArr, dataObj) {
-                    return "<a>" + rangeArr.split("x")[0] + "</a>";
+                    return 0;//"<a>" + rangeArr.split("x")[0] + "</a>";
                 }
             },
             {
                 name:"height",
                 func:function (rangeArr, dataObj) {
-                    return "<a>" + rangeArr.split("x")[1] + "</a>";
+                    return 0;//"<a>" + rangeArr.split("x")[1] + "</a>";
                 }
             },
             { "name":"t" },
             { "name":"u" },
             { "name":"n" }
         ]);
-
-        var resolutions = _.pluck(chartData.chartData, 'resolution'),
-            resolutionTotal = _.pluck(chartData.chartData, 'u'),
-            resolutionNew = _.pluck(chartData.chartData, 'n'),
+        console.log(_.pluck(chartData.chartData, 'densitys'))//hold the value of the first column
+        var densitys = _.pluck(chartData.chartData, 'densitys'),
+            densityTotal = _.pluck(chartData.chartData, 'u'),
+            densityNew = _.pluck(chartData.chartData, 'n'),
             chartData2 = [],
             chartData3 = [];
 
-        var sum = _.reduce(resolutionTotal, function (memo, num) {
+        var sum = _.reduce(densityTotal, function (memo, num) {
             return memo + num;
         }, 0);
 
-        for (var i = 0; i < resolutions.length; i++) {
-            var percent = (resolutionTotal[i] / sum) * 100;
+        for (var i = 0; i < densitys.length; i++) {
+            var percent = (densityTotal[i] / sum) * 100;
             chartData2[i] = {data:[
-                [0, resolutionTotal[i]]
-            ], label:resolutions[i]};
+                [0, densityTotal[i]]
+            ], label:densitys[i]};
         }
 
-        var sum2 = _.reduce(resolutionNew, function (memo, num) {
+        var sum2 = _.reduce(densityNew, function (memo, num) {
             return memo + num;
         }, 0);
 
-        for (var i = 0; i < resolutions.length; i++) {
-            var percent = (resolutionNew[i] / sum) * 100;
+        for (var i = 0; i < densitys.length; i++) {
+            var percent = (densityNew[i] / sum) * 100;
             chartData3[i] = {data:[
-                [0, resolutionNew[i]]
-            ], label:resolutions[i]};
+                [0, densityNew[i]]
+            ], label:densitys[i]};
         }
 
         chartData.chartDPTotal = {};
@@ -199,7 +204,7 @@
 
         return chartData;
     };
-    countlyDeviceDetails.getResolutionData = function () {
+countlyDeviceDetails.getResolutionData = function () {
         var chartData = countlyCommon.extractTwoLevelData(_deviceDetailsDb, _resolutions, countlyDeviceDetails.
             clearDeviceDetailsObject, [
             {
@@ -343,7 +348,7 @@
             _resolutions = (_deviceDetailsDb['meta']['resolutions']) ? _deviceDetailsDb['meta']['resolutions'] : [];
             _densitys = (_deviceDetailsDb['meta']['densitys']) ? _deviceDetailsDb['meta']['densitys'] : [];
             _os_versions = (_deviceDetailsDb['meta']['os_versions']) ? _deviceDetailsDb['meta']['os_versions'] : [];
-            console.log(_densitys);
+            // console.log(_deviceDetailsDb['meta'])
         } else {
             _os = [];
             _resolutions = [];
@@ -354,6 +359,7 @@
         if (_os_versions.length) {
             _os_versions = _os_versions.join(",").replace(/\./g, ":").split(",");
         }
+        // console.log(_deviceDetailsDb['meta'])
     }
 
     function fixOSVersion(osName) {
