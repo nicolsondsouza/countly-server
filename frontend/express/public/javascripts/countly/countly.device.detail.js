@@ -152,18 +152,18 @@
                     return rangeArr;
                 }
             },
-            {
-                name:"width",
-                func:function (rangeArr, dataObj) {
-                    return 0;//"<a>" + rangeArr.split("x")[0] + "</a>";
-                }
-            },
-            {
-                name:"height",
-                func:function (rangeArr, dataObj) {
-                    return 0;//"<a>" + rangeArr.split("x")[1] + "</a>";
-                }
-            },
+            // {
+            //     name:"width",
+            //     func:function (rangeArr, dataObj) {
+            //         return 0;//"<a>" + rangeArr.split("x")[0] + "</a>";
+            //     }
+            // },
+            // {
+            //     name:"height",
+            //     func:function (rangeArr, dataObj) {
+            //         return 0;//"<a>" + rangeArr.split("x")[1] + "</a>";
+            //     }
+            // },
             { "name":"t" },
             { "name":"u" },
             { "name":"n" }
