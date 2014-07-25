@@ -2,7 +2,26 @@ function showMessage(key) {
 	$("#message").text(jQuery.i18n.map[key]);
 }
 function showInstruction(key) {
-	$("#InstructionMessage").append("We've conducted a careful analysis of the ways in which Wikihelp was successful in meeting your needs, and we've concluded that we can do better. Accordingly, we have retired the site and migrated the content. ");
+	var InstructionTitle;
+	var InstructionImg;
+	var InstructionContent;
+		
+	switch(Math.floor((Math.random() * 3)))
+	{
+		case 0:
+		InstructionTitle="Content1";
+		InstructionContent="We've conducted a careful analysis of the ways in which Wikihelp was successful in meeting your needs, and we've concluded that we can do better. Accordingly, we have retired the site and migrated the content.";
+		break;
+		case 1:
+		InstructionTitle="Content2";
+		InstructionContent="We've conducted a careful analysis of the ways in which Wikihelp was successful in meeting your needs, and we've concluded that we can do better. Accordingly, we have retired the site and migrated the content.";
+		break;
+		case 2:
+		InstructionTitle="Content3";
+		InstructionContent="We've conducted a careful analysis of the ways in which Wikihelp was successful in meeting your needs, and we've concluded that we can do better. Accordingly, we have retired the site and migrated the content.";
+		break;
+	}
+	$("#InstructionMessage").html("<h1>"+InstructionTitle+"</h1><br><img max-width: 100%; src='"+InstructionImg+"'/>"+InstructionContent);
 }
 
 $(document).ready(function() {

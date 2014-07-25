@@ -7,8 +7,8 @@ a { color:inherit; text-decoration:none; }
 a:visited { color:inherit; }
 a:hover { color:inherit; }
 a:active { color:inherit; }
-#login-form { width:477px; height:180px; margin-left:-238px; left:50%; top:50%; margin-top:-90px; position:absolute; background-image:url('/images/pre-login/cly_login_bg.png'); background-position:220px 0px; background-repeat:no-repeat; } 
-#login-left { margin-right:30px; padding-right:30px; height:100%; float:left;width: 184px;color: white }
+#login-form { width:50%; height:180px; margin-left:25%; left:0%; top:50%; margin-top:-90px; position:absolute;  } 
+#login-left { margin-right:30px; padding-right:30px; height:100%; float:left;width: 50%;color: white ;border-right: 1px solid black}
 #forgot-form { width:555px; height:218px; margin-left:-276px; left:50%; top:50%; margin-top:-109px; position:absolute; } 
 #forgot-left { margin-bottom:28px; }
 #reset-form { width:704px; height:218px; margin-left:-352px; left:50%; top:50%; margin-top:-109px; position:absolute; } 
@@ -41,3 +41,9 @@ a:active { color:inherit; }
 #message { position:absolute; top:50px; text-align:center; left:50%; width:400px; margin-left:-200px; color:#CCC; font:20px Ubuntu,Helvetica,sans-serif; }
 #forgot-password { color:#666; font-size:13px; cursor:pointer; }
 	#forgot-password:hover { color:#58985A; transition:color 1s; }
+#InstructionMessage {
+	margin-top: -1%;
+}
+h1{
+	margin: 0;
+}
