@@ -1,6 +1,9 @@
 function showMessage(key) {
 	$("#message").text(jQuery.i18n.map[key]);
 }
+function showInstruction(key) {
+	$("#InstructionMessage").append("We've conducted a careful analysis of the ways in which Wikihelp was successful in meeting your needs, and we've concluded that we can do better. Accordingly, we have retired the site and migrated the content. ");
+}
 
 $(document).ready(function() {
 

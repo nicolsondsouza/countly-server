@@ -17,6 +17,9 @@
 	 <% if (message){ %>
 		<div id="message"></div>
 	 <% } %>
+	<div id="top-container-left">
+	 <div id="login-logo"></div>	
+	</div>
 	<div id="top-container">
 		<a class="top-button" href="http://count.ly">Countly</a>
 		<div class="top-button" id="select-lang">
@@ -42,8 +45,8 @@
 	</div>
 	<div id="login-form">
 		<div style="overflow:auto;">
-			<div id="login-left">
-				<div id="login-logo"></div>
+			<div id="login-left">						 
+					<div id="InstructionMessage"></div>
 			</div>
 			<div style="float:left; overflow:auto;">
 				<form method="POST">
@@ -75,6 +78,10 @@
 			<% if (message){ %>
 				showMessage("<%= message %>");
 			<% } %>
+			
+				showInstruction();
+			
+			
 			document.title = "Countly | " + jQuery.i18n.map["login.title"];
 		});
 		
