@@ -44,6 +44,9 @@ a:active { color:inherit; }
 #InstructionMessage {
 	margin-top: -1%;
 }
-h1{
+#InstructionMessage img {
+	float: left;
+}
+#InstructionMessage h1{
 	margin: 0;
 }
