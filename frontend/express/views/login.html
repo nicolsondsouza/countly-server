@@ -10,6 +10,7 @@
 <html>
 <head>
 	<link href='/stylesheets/pre-login/main.css' rel='stylesheet' type='text/css'>
+	<link href='/javascripts/semantic/css/semantic.min.css' rel='stylesheet' type='text/css'>
 	<link rel="icon" type="image/png" href="/images/favicon.png">
 	<title>Countly</title>
 </head>
@@ -41,8 +42,51 @@
 		</div>
 	</div>
 	<div id="login-form">
-		<div style="overflow:auto;">
-			<div id="login-left">
+		<div class="ui two column middle aligned relaxed grid basic segment">
+			<div class="column">
+				<div class="ui message">
+					<div class="header">
+						Welcome back!
+					</div>
+					<p>
+						It's good to see you again. I have had a lot to think about since our last visit, I've changed much as a person and I can see that you have too.
+					</p>
+					<p>
+						Perhaps we can talk about it if you have the time.
+					</p>
+				</div>
+			</div>
+			<div class="ui vertical divider">
+			Or
+			</div>
+			<div class="center aligned column">
+				<div class="ui form segment">
+					<div class="field">
+						<label>Username</label>
+						<div class="ui left labeled icon input">
+							<input type="text" placeholder="Username">
+							<i class="user icon"></i>
+							<div class="ui corner label">
+								<i class="asterisk icon"></i>
+							</div>
+						</div>
+					</div>
+					<div class="field">
+						<label>Password</label>
+						<div class="ui left labeled icon input">
+							<input type="password">
+							<i class="lock icon"></i>
+								<div class="ui corner label">
+									<i class="asterisk icon"></i>
+								</div>
+						</div>
+					</div>
+					<div class="ui blue submit button">Login</div>
+				</div>
+			</div>
+		</div>
+		<!-- <div style="overflow:auto;">
+			 <div id="login-left">
 				<div id="login-logo"></div>
 			</div>
 			<div style="float:left; overflow:auto;">
@@ -62,7 +106,7 @@
 					</div>
 				</form>
 			</div>
-		</div>
+		</div>  -->
 	</div>
 	<script language="javascript" type="text/javascript" src="/javascripts/dom/jquery/jquery-1.8.3.min.js"></script>
 	<script language="javascript" type="text/javascript" src="/javascripts/utils/prefixfree.min.js"></script>
@@ -70,6 +114,9 @@
 	<script language="javascript" type="text/javascript" src="/javascripts/utils/store+json2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="/javascripts/utils/jquery.i18n.properties-min-1.0.9.js"></script>
 	<script language="javascript" type="text/javascript" src="/javascripts/pre-login.js"></script>
+	
+	<script language="javascript" type="text/javascript" src="/javascripts/semantic/javascript/semantic.min.js"></script>
+
 	<script>
 		$(document).ready(function() {
 			<% if (message){ %>
