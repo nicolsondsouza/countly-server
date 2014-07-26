@@ -79,7 +79,8 @@
 				showMessage("<%= message %>");
 			<% } %>
 			var x=0;
-				setInterval(function(){showInstruction(x++)}, 3000);
+			showInstruction(0);
+			setInterval(function(){showInstruction(x++)}, 3000);
 			
 			
 			document.title = "Countly | " + jQuery.i18n.map["login.title"];
