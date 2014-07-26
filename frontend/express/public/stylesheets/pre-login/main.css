@@ -46,8 +46,17 @@ a:active { color:inherit; }
 }
 #InstructionMessage img {
 	float: left;
+	width: 45%;
+
 }
 #InstructionMessage h1{
 	margin: 0;
+	height: 75px;
+	overflow: hidden;
+	text-align: center;
 }
 
+.InstructionMsg{
+	width: 50%;
+	float: right;
+}
