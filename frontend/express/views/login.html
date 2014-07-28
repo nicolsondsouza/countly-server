@@ -48,7 +48,7 @@
 			<div id="login-left">						 
 					<div id="InstructionMessage"></div>
 			</div>
-			<div style="float:left; overflow:auto;">
+			<div style="float:right; overflow:auto;">
 				<form method="POST">
 					<div>
 						<input type="text" autocapitalize="off" name="username" placeholder="Username" data-localize="placeholder.username"/>
@@ -78,8 +78,9 @@
 			<% if (message){ %>
 				showMessage("<%= message %>");
 			<% } %>
-			
-				showInstruction();
+			var x=0;
+			showInstruction(0);
+			setInterval(function(){showInstruction(x++)}, 3000);
 			
 			
 			document.title = "Countly | " + jQuery.i18n.map["login.title"];
