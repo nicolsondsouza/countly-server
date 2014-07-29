@@ -7,8 +7,8 @@ a { color:inherit; text-decoration:none; }
 a:visited { color:inherit; }
 a:hover { color:inherit; }
 a:active { color:inherit; }
-#login-form { width:70%; height:180px; margin-left:15%; left:0%; top:50%; margin-top:-90px; position:absolute;  } 
-#login-left { margin-right:35px; padding-right:35px; height:auto; float:left;width: 600px;color: white ;border-right: 1px solid black;border-right-style:dashed;}
+#login-form { height:180px; margin-left:125px; left:0%; top:50%; margin-top:-90px; position:absolute;  } 
+#login-left { margin-right:35px; padding-right:35px; height:auto; float:left;width: 450px;color: white ;border-right: 1px solid black;border-right-style:dashed;}
 #forgot-form { width:555px; height:218px; margin-left:-276px; left:50%; top:50%; margin-top:-109px; position:absolute; } 
 #forgot-left { margin-bottom:28px; }
 #reset-form { width:704px; height:218px; margin-left:-352px; left:50%; top:50%; margin-top:-109px; position:absolute; } 
@@ -46,7 +46,7 @@ a:active { color:inherit; }
 }
 #InstructionMessage img {
 	float: left;
-	width: 277px;
+	width: 200px;
 
 }
 #InstructionMessage h1{
@@ -58,7 +58,7 @@ a:active { color:inherit; }
 }
 
 .InstructionMsg{
-	width: 277px;
+	width: 200px;
 	float: right;
 }
 #login-left{
