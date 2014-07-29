@@ -114,4 +114,17 @@ $(document).ready(function() {
 			}
 		});
 	});
+	function ScaleSlider() {
+                var parentWidth = jssor_slider2.$Elmt.parentNode.clientWidth;
+                if (parentWidth) {
+                    var sliderWidth = parentWidth;
+
+                    //keep the slider width no more than 602
+                    sliderWidth = Math.min(sliderWidth, 602);
+
+                    jssor_slider2.$SetScaleWidth(sliderWidth);
+                }
+                else
+                    $JssorUtils$.$Delay(ScaleSlider, 30);
+            }
 });
