@@ -24,7 +24,7 @@ function showInstruction(x) {
 		InstructionContent="We've conducted a careful analysis of the ways in which Wikihelp was successful in meeting your needs, and we've concluded that we can do better. Accordingly, we have retired the site and migrated the content.";
 		break;
 	}
-	$("#InstructionMessage").html("<h1>"+InstructionTitle+"</h1><br><img max-width: 100%; src='"+InstructionImg+"'/><div class='InstructionMsg'>"+InstructionContent+"</div>");
+	$("#InstructionMessage").html("<h1>"+InstructionTitle+"</h1><br><img  src='"+InstructionImg+"'/><div class='InstructionMsg'>"+InstructionContent+"</div>");
 }
 
 $(document).ready(function() {
