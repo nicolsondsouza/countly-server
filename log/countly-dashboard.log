@@ -1,0 +1,71 @@
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module './../../config'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/root/node/countly/api/parts/mgmt/mail.js:4:21)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module './../../config'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/root/node/countly/api/parts/mgmt/mail.js:4:21)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module './../../config'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/root/node/countly/api/parts/mgmt/mail.js:4:21)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+
+module.js:340
+    throw err;
+          ^
+Error: Cannot find module './../../config'
+    at Function.Module._resolveFilename (module.js:338:15)
+    at Function.Module._load (module.js:280:25)
+    at Module.require (module.js:364:17)
+    at require (module.js:380:17)
+    at Object.<anonymous> (/root/node/countly/api/parts/mgmt/mail.js:4:21)
+    at Module._compile (module.js:456:26)
+    at Object.Module._extensions..js (module.js:474:10)
+    at Module.load (module.js:356:32)
+    at Function.Module._load (module.js:312:12)
+    at Module.require (module.js:364:17)
+Error: Forbidden
+    at Object.exports.error (/root/node/countly/frontend/express/node_modules/express/node_modules/connect/lib/utils.js:60:13)
+    at Object.handle (/root/node/countly/frontend/express/node_modules/express/node_modules/connect/lib/middleware/csrf.js:54:41)
+    at next (/root/node/countly/frontend/express/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.methodOverride [as handle] (/root/node/countly/frontend/express/node_modules/express/node_modules/connect/lib/middleware/methodOverride.js:37:5)
+    at next (/root/node/countly/frontend/express/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.handle (/root/node/countly/frontend/express/app.js:87:9)
+    at next (/root/node/countly/frontend/express/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.handle (/root/node/countly/frontend/express/node_modules/connect-flash/lib/flash.js:21:5)
+    at next (/root/node/countly/frontend/express/node_modules/express/node_modules/connect/lib/proto.js:190:15)
+    at Object.session [as handle] (/root/node/countly/frontend/express/node_modules/express/node_modules/connect/lib/middleware/session.js:302:7)
