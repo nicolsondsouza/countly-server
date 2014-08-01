@@ -11,9 +11,10 @@ body {
 .joyride-tip-guide {
   position: absolute;
   background: #000;
-  background: rgba(0,0,0,0.8);
+  background: #E6E6E6;
   display: none;
-  color: #fff;
+  border: 1px solid #33AA33;
+  color: black;
   width: 300px;
   z-index: 101;
   top: 0; /* keeps the page from scrolling when calculating position */
@@ -64,7 +65,7 @@ body {
   and override the top,left,right colors below.
   */
   border-color: #000;
-  border-color: rgba(0,0,0,0.8);
+  border-color: #E6E6E6;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -82,7 +83,7 @@ body {
   and override the bottom,left,right colors below.
   */
   border-color: #000;
-  border-color: rgba(0,0,0,0.8) !important;
+  border-color: #33AA33 !important;
   border-bottom-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -93,7 +94,7 @@ body {
 
 .joyride-tip-guide span.joyride-nub.right {
   border-color: #000;
-  border-color: rgba(0,0,0,0.8) !important;
+  border-color: #33AA33 !important;
   border-top-color: transparent !important;
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
@@ -106,7 +107,7 @@ body {
 
 .joyride-tip-guide span.joyride-nub.left {
   border-color: #000;
-  border-color: rgba(0,0,0,0.8) !important;
+  border-color: #33AA33 !important;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-bottom-color: transparent !important;
@@ -119,7 +120,7 @@ body {
 
 .joyride-tip-guide span.joyride-nub.top-right {
   border-color: #000;
-  border-color: rgba(0,0,0,0.8);
+  border-color: #33AA33;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -154,7 +155,7 @@ body {
   border-bottom: dotted 1px rgba(255,255,255,0.6);
 }
 .joyride-tip-guide a:hover {
-  color: rgba(255,255,255,0.8);
+  color: #33A933;
   border-bottom: none;
 }
 
@@ -165,35 +166,35 @@ body {
   font-size: 13px;
   text-decoration: none;
   color: rgb(255,255,255);
-  border: solid 1px rgb(0,60,180);
-  background: rgb(0,99,255);
-  background: -moz-linear-gradient(top, rgb(0,99,255) 0%, rgb(0,85,214) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(0,99,255)), color-stop(100%,rgb(0,85,214)));
-  background: -webkit-linear-gradient(top, rgb(0,99,255) 0%,rgb(0,85,214) 100%);
-  background: -o-linear-gradient(top, rgb(0,99,255) 0%,rgb(0,85,214) 100%);
-  background: -ms-linear-gradient(top, rgb(0,99,255) 0%,rgb(0,85,214) 100%);
+  border: solid 1px #33AA33;
+  background: #33AA33;
+  background: -moz-linear-gradient(top, #33AA33 0%, #33AA33 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33AA33), color-stop(100%,#33AA33));
+  background: -webkit-linear-gradient(top, #33AA33 0%,#33AA33 100%);
+  background: -o-linear-gradient(top, #33AA33 0%,#33AA33 100%);
+  background: -ms-linear-gradient(top, #33AA33 0%,#33AA33 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0063ff', endColorstr='#0055d6',GradientType=0 );
-  background: linear-gradient(top, rgb(0,99,255) 0%,rgb(0,85,214) 100%);
+  background: linear-gradient(top, #33AA33 0%,#33AA33 100%);
   text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
   -webkit-border-radius: 2px;
      -moz-border-radius: 2px;
           border-radius: 2px;
-  -webkit-box-shadow: 0px 1px 0px rgba(255,255,255,0.3) inset;
-     -moz-box-shadow: 0px 1px 0px rgba(255,255,255,0.3) inset;
-          box-shadow: 0px 1px 0px rgba(255,255,255,0.3) inset;
+  -webkit-box-shadow: 0px 1px 0px #33AA33 inset;
+     -moz-box-shadow: 0px 1px 0px #33AA33 inset;
+          box-shadow: 0px 1px 0px #33AA33 inset;
 }
 
 .joyride-next-tip:hover {
   color: rgb(255,255,255) !important;
-  border: solid 1px rgb(0,60,180) !important;
-  background: rgb(43,128,255);
-  background: -moz-linear-gradient(top, rgb(43,128,255) 0%, rgb(29,102,211) 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(43,128,255)), color-stop(100%,rgb(29,102,211)));
-  background: -webkit-linear-gradient(top, rgb(43,128,255) 0%,rgb(29,102,211) 100%);
-  background: -o-linear-gradient(top, rgb(43,128,255) 0%,rgb(29,102,211) 100%);
-  background: -ms-linear-gradient(top, rgb(43,128,255) 0%,rgb(29,102,211) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2b80ff', endColorstr='#1d66d3',GradientType=0 );
-  background: linear-gradient(top, rgb(43,128,255) 0%,rgb(29,102,211) 100%);
+  border: solid 1px #33A933 !important;
+  background: #33A933;
+  background: -moz-linear-gradient(top, #33A933 0%, #33A933 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33A933), color-stop(100%,#33A933));
+  background: -webkit-linear-gradient(top, #33A933 0%,#33A933 100%);
+  background: -o-linear-gradient(top, #33A933 0%,#33A933 100%);
+  background: -ms-linear-gradient(top, #33A933 0%,#33A933 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33A933', endColorstr='#33A933',GradientType=0 );
+  background: linear-gradient(top, #33A933 0%,#33A933 100%);
 }
 
 .joyride-timer-indicator-wrap {
