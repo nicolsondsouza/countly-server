@@ -29,7 +29,6 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
-                    console.log(json);
                     _deviceDetailsDb = json;
                     setMeta();
                 }
@@ -61,7 +60,6 @@
                 },
                 dataType:"jsonp",
                 success:function (json) {
-                    console.log(json)
                     countlyCommon.extendDbObj(_deviceDetailsDb, json);
                     setMeta();
                 }
@@ -148,7 +146,6 @@
             {
                 name:"densitys",
                 func:function (rangeArr, dataObj) {
-                    console.log(rangeArr+"***"+dataObj)
                     return rangeArr;
                 }
             },
@@ -168,9 +165,6 @@
             { "name":"u" },
             { "name":"n" }
         ]);
-        console.log("chartData");
-            console.log(chartData);
-        console.log(_.pluck(chartData.chartData, 'densitys'))//hold the value of the first column
         var densitys = _.pluck(chartData.chartData, 'densitys'),
             densityTotal = _.pluck(chartData.chartData, 'u'),
             densityNew = _.pluck(chartData.chartData, 'n'),

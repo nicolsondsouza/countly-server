@@ -172,7 +172,6 @@ if (cluster.isMaster) {
         switch (apiPath) {
             case '/i/bulk':
             {
-                console.log("/i/bulk");
                 var requests = queryString.requests,
                     appKey = queryString.app_key;
                 // console.log(requests);
