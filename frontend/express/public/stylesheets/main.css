@@ -639,3 +639,4 @@ table.events-table { width:100%; padding:0; margin:0; }
 #total-user-estimate-ind:hover { color:#6BB96E; }
 
 .rotated-tick { margin-top:-16px; font:normal 17px Oswald; }
+#joyRideTipContent{display: none;}

@@ -11,10 +11,10 @@ body {
 .joyride-tip-guide {
   position: absolute;
   background: #000;
-  background: #E6E6E6;
+  background: #363636;
   display: none;
-  border: 1px solid #33AA33;
-  color: black;
+  border: 1px solid #1C1C1C;
+  color: #F8F8F8;
   width: 300px;
   z-index: 101;
   top: 0; /* keeps the page from scrolling when calculating position */
@@ -65,7 +65,7 @@ body {
   and override the top,left,right colors below.
   */
   border-color: #000;
-  border-color: #E6E6E6;
+  border-color: #1C1C1C;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -83,7 +83,7 @@ body {
   and override the bottom,left,right colors below.
   */
   border-color: #000;
-  border-color: #33AA33 !important;
+  border-color: #1C1C1C !important;
   border-bottom-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -94,7 +94,7 @@ body {
 
 .joyride-tip-guide span.joyride-nub.right {
   border-color: #000;
-  border-color: #33AA33 !important;
+  border-color: #1C1C1C !important;
   border-top-color: transparent !important;
   border-right-color: transparent !important;
   border-bottom-color: transparent !important;
@@ -107,7 +107,7 @@ body {
 
 .joyride-tip-guide span.joyride-nub.left {
   border-color: #000;
-  border-color: #33AA33 !important;
+  border-color: #1C1C1C !important;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-bottom-color: transparent !important;
@@ -120,7 +120,7 @@ body {
 
 .joyride-tip-guide span.joyride-nub.top-right {
   border-color: #000;
-  border-color: #33AA33;
+  border-color: #1C1C1C;
   border-top-color: transparent !important;
   border-left-color: transparent !important;
   border-right-color: transparent !important;
@@ -246,12 +246,12 @@ body {
 }
 
 .joyride-expose-wrapper {
-    background-color: #ffffff;
+    background-color: #1C1C1C;
     position: absolute;
     z-index: 102;
-    -moz-box-shadow: 0px 0px 30px #ffffff;
-    -webkit-box-shadow: 0px 0px 30px #ffffff;
-    box-shadow: 0px 0px 30px #ffffff;
+    -moz-box-shadow: 0px 0px 30px #1C1C1C;
+    -webkit-box-shadow: 0px 0px 30px #1C1C1C;
+    box-shadow: 0px 0px 30px #1C1C1C;
 }
 
 .joyride-expose-cover {
