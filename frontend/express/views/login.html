@@ -9,45 +9,45 @@
 -->
 <html>
 <head>
-	<link href='/stylesheets/pre-login/main.css' rel='stylesheet' type='text/css'>
-	<link rel="icon" type="image/png" href="/images/favicon.png">
-	<title>Countly</title>
+    <link href='/stylesheets/pre-login/main.css' rel='stylesheet' type='text/css'>
+    <link rel="icon" type="image/png" href="/images/favicon.png">
+    <title>Countly</title>
 </head>
 <body>
-	 <% if (message){ %>
-		<div id="message"></div>
-	 <% } %>
-	<div id="top-container-left">
-	 <div id="login-logo"></div>	
-	</div>
-	<div id="top-container">
-		<a class="top-button" href="http://count.ly">Countly</a>
-		<div class="top-button" id="select-lang">
-			<div id="active-lang">EN</div>
-			<div id="langs">
-				<div class="group">
-					<a data-language-code="de" class="item">Deutsch</a>
-					<a data-language-code="en" class="item">English</a>
-					<a data-language-code="es" class="item">Español</a>
-					<a data-language-code="fr" class="item">Français</a>
-					<a data-language-code="it" class="item">Italiano</a>
+     <% if (message){ %>
+        <div id="message"></div>
+     <% } %>
+    <div id="top-container-left">
+     <div id="login-logo"></div>    
+    </div>
+    <div id="top-container">
+        <a class="top-button" href="http://count.ly">Countly</a>
+        <div class="top-button" id="select-lang">
+            <div id="active-lang">EN</div>
+            <div id="langs">
+                <div class="group">
+                    <a data-language-code="de" class="item">Deutsch</a>
+                    <a data-language-code="en" class="item">English</a>
+                    <a data-language-code="es" class="item">Español</a>
+                    <a data-language-code="fr" class="item">Français</a>
+                    <a data-language-code="it" class="item">Italiano</a>
                     <a data-language-code="nl" class="item">Nederlands</a>
-				</div>
-				<div class="group">
+                </div>
+                <div class="group">
                     <a data-language-code="pt" class="item">Português</a>
                     <a data-language-code="ru" class="item">Русский язык</a>
-					<a data-language-code="tr" class="item">Türkçe</a>
-					<a data-language-code="zh" class="item">中文</a>
-					<a data-language-code="ja" class="item">日本語</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div id="login-form">
-		<div style="overflow:auto;">
-			<div id="login-left">						 
-					<!-- <div id="InstructionMessage"></div> -->
-					    <!-- Caption Style -->
+                    <a data-language-code="tr" class="item">Türkçe</a>
+                    <a data-language-code="zh" class="item">中文</a>
+                    <a data-language-code="ja" class="item">日本語</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="login-form">
+        <div style="overflow:auto;">
+            <div id="login-left">                        
+                    <!-- <div id="InstructionMessage"></div> -->
+                        <!-- Caption Style -->
  
     <!-- use jssor.slider.min.js instead for release -->
     <!-- jssor.slider.min.js = (jssor.core.js + jssor.utils.js + jssor.slider.js) -->
@@ -55,7 +55,7 @@
     <script type="text/javascript" src="/javascripts/slider_js/jssor.utils.js"></script>
     <script type="text/javascript" src="/javascripts/slider_js/jssor.slider.js"></script>
     <script>
-         jssor_slider2_starter = function (containerId) {
+        jssor_slider2_starter = function (containerId) {
             var options = {
                 $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
                 $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
@@ -102,18 +102,18 @@
         <!-- Slides Container -->
         <div id="slider_inner" u="slides" style="">
             <div class="slider_items">
-                <div style="width:210px; height:210px; float:left; overflow: hidden;">  <img width="210px" height="210px" src="/images/dashboard/dashboard.png"/></div>
-                <div style="width:210px; height:210px; overflow: hidden; color:white;float:right ; background-color:#1A1A1A">Countly mobile dashboard for  <a href=https://itunes.apple.com/us/app/countly-analytics/id695261996?mt=8>iPhone</a> and <a href=https://play.google.com/store/apps/details?id=ly.count.app>Android</a> helps you monitor your app's performance 24x7. Countly mobile analytics application is available for all editions, including Community, Cloud and Enterprise.</div>
+                <div style="width:210px; height:210px; float:left; overflow: hidden;">  <img width="210px" height="210px" src="/images/dashboard/bg.png"/></div>
+                <div style="width:210px; height:210px; overflow: hidden; color:white;float:right ; background-color:#1A1A1A">Slide 1 content, place any html here.</div>
                 <!-- <div u="thumb">Banner Rotator</div> -->
             </div>
             <div>
-                <div style="width:210px; height:210px; float:left; overflow: hidden;"><img width="210px" height="210px" src="/images/dashboard/enterprise.png"/></div>
-                <div style="width:210px; overflow: hidden; height:210px; color:white;float:right; background-color:#1A1A1A">Countly Enterprise Edition is a full-featured, open source, customizable, white-labeled, on-premise mobile analytics stack including Countly server, 10+ SDKs, API libs, extensive documentation with full support.</div>
+                <div style="width:210px; height:210px; float:left; overflow: hidden;"><img width="210px" height="210px" src="/images/dashboard/logo_bg.png"/></div>
+                <div style="width:210px; overflow: hidden; height:210px; color:white;float:right; background-color:#1A1A1A">Slide 2 content, place any html here.</div>
                 <!-- <div u="thumb">Banner Rotator</div> -->
             </div>
             <div>
-                <div style="width:210px;float:left; overflow: hidden;"><img width="210px" height="210px" src="/images/dashboard/funnels.png"/></div>
-                <div style="width:210px; overflow: hidden;  height:210px; color:white;float:right; background-color:#1A1A1A">Funnels are used to track the goal completion rates of a step by step path inside your application. Using Funnels, you can examine how your users walk through a series of events. These goals (steps) are defined as custom events in Countly.</div>
+                <div style="width:210px;float:left; overflow: hidden;"><img width="210px" height="210px" src="/images/dashboard/menu_bg.png"/></div>
+                <div style="width:210px; overflow: hidden;  height:210px; color:white;float:right; background-color:#1A1A1A">Slide 3 content, place any html here.</div>
                 <!-- <div u="thumb">Banner Rotator</div> -->
             </div>
             
@@ -137,48 +137,48 @@
         </script>
     </div>
  
-			</div>
-			<div style="float:left; overflow:auto;">
-				<form method="POST">
-					<div>
-						<input type="text" autocapitalize="off" name="username" placeholder="Username" data-localize="placeholder.username"/>
-					</div>
-					<div>
-						<input name="password" type="password" placeholder="Password" data-localize="placeholder.password"/>
-					</div>
-					<div>
-						<input type="hidden" value="<%= csrf %>" name="_csrf" />
-						<input id="login-button" value="Login" type="submit" data-localize="login.button"/>
-					</div>
-					<div style="text-align:right; margin-top:12px;">
-						<a id="forgot-password" href="/forgot"  data-localize="login.forgot"></a>
-					</div>
-				</form>
-			</div>
-		</div>
-	</div>
-	<script language="javascript" type="text/javascript" src="/javascripts/dom/jquery/jquery-1.8.3.min.js"></script>
-	<script language="javascript" type="text/javascript" src="/javascripts/utils/prefixfree.min.js"></script>
-	<script language="javascript" type="text/javascript" src="/javascripts/dom/jquery.noisy.min.js"></script>
-	<script language="javascript" type="text/javascript" src="/javascripts/utils/store+json2.min.js"></script>
-	<script language="javascript" type="text/javascript" src="/javascripts/utils/jquery.i18n.properties-min-1.0.9.js"></script>
-	<script language="javascript" type="text/javascript" src="/javascripts/pre-login.js"></script>
-	<script>
-		$(document).ready(function() {
-			<% if (message){ %>
-				showMessage("<%= message %>");
-			<% } %>
-			// var x=0;
-			// showInstruction(0);
-			setInterval(function(){showInstruction(x++)}, 3000);
-			
-			
-			document.title = "Countly | " + jQuery.i18n.map["login.title"];
-		});
-		
-		$(document).bind('clyLangChange', function() {
-			document.title = "Countly | " + jQuery.i18n.map["login.title"];
-		});
-	</script>
+            </div>
+            <div style="float:left; overflow:auto;">
+                <form method="POST">
+                    <div>
+                        <input type="text" autocapitalize="off" name="username" placeholder="Username" data-localize="placeholder.username"/>
+                    </div>
+                    <div>
+                        <input name="password" type="password" placeholder="Password" data-localize="placeholder.password"/>
+                    </div>
+                    <div>
+                        <input type="hidden" value="<%= csrf %>" name="_csrf" />
+                        <input id="login-button" value="Login" type="submit" data-localize="login.button"/>
+                    </div>
+                    <div style="text-align:right; margin-top:12px;">
+                        <a id="forgot-password" href="/forgot"  data-localize="login.forgot"></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script language="javascript" type="text/javascript" src="/javascripts/dom/jquery/jquery-1.8.3.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/javascripts/utils/prefixfree.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/javascripts/dom/jquery.noisy.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/javascripts/utils/store+json2.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/javascripts/utils/jquery.i18n.properties-min-1.0.9.js"></script>
+    <script language="javascript" type="text/javascript" src="/javascripts/pre-login.js"></script>
+    <script>
+        $(document).ready(function() {
+            <% if (message){ %>
+                showMessage("<%= message %>");
+            <% } %>
+            // var x=0;
+            // showInstruction(0);
+            setInterval(function(){showInstruction(x++)}, 3000);
+            
+            
+            document.title = "Countly | " + jQuery.i18n.map["login.title"];
+        });
+        
+        $(document).bind('clyLangChange', function() {
+            document.title = "Countly | " + jQuery.i18n.map["login.title"];
+        });
+    </script>
 </body>
 </html>
