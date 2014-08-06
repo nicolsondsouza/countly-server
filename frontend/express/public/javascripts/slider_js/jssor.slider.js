@@ -1217,7 +1217,7 @@ new function () {
                 _LoadingTicket = null;
 
                 //EVT_SWIPE_START
-                _SelfSlider.$TriggerEvent(JssorSlider.$EVT_SWIPE_START, GetRealIndex(_Conveyor.$GetPosition()), _Conveyor.$GetPosition());
+                // _SelfSlider.$TriggerEvent(JssorSlider.$EVT_SWIPE_START, GetRealIndex(_Conveyor.$GetPosition()), _Conveyor.$GetPosition());
             };
 
             _SelfCarouselPlayer.$OnStop = function () {
@@ -1228,7 +1228,7 @@ new function () {
                 var currentSlideInfo = _Conveyor.$GetCurrentSlideInfo();
 
                 //EVT_SWIPE_END
-                _SelfSlider.$TriggerEvent(JssorSlider.$EVT_SWIPE_END, GetRealIndex(_Conveyor.$GetPosition()), _Conveyor.$GetPosition());
+                // _SelfSlider.$TriggerEvent(JssorSlider.$EVT_SWIPE_END, GetRealIndex(_Conveyor.$GetPosition()), _Conveyor.$GetPosition());
 
                 if (!currentSlideInfo.$Position) {
                     OnPark(currentSlideInfo.$VirtualIndex, _CurrentSlideIndex);
