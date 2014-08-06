@@ -1859,7 +1859,7 @@ new function () {
 
                     _SelfSlider.$TriggerEvent(stateEvent, slideIndex, currentPosition, _ProgressBegin, _IdleBegin, _IdleEnd, _ProgressEnd);
 
-                    var allowAutoPlay = true//_AutoPlay && (!_HoverToPause || _HoverStatus);
+                    var allowAutoPlay = _AutoPlay && (!_HoverToPause || _HoverStatus);
 
                     if (currentPosition == _ProgressEnd) {
                         allowAutoPlay && slideItem.$GoForNextSlide();
