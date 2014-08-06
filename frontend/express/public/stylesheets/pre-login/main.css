@@ -121,7 +121,7 @@ a:active { color:inherit; }
                 */
                 .jssort12 .w, .jssort12 .phv .w
                 {
-                    cursor: pointer;
+                    cursor: default;
                     position: absolute;
                     WIDTH: 0px;
                     HEIGHT: 0px;
