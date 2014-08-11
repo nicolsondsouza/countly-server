@@ -55,7 +55,7 @@ $(document).ready(function() {
 				} else if (elem.is("input[type=button]") || elem.is("input[type=submit]")) {
 					elem.attr("value", localizedValue);
 				} else {
-					elem.text(jQuery.i18n.map[elem.data("localize")]);
+					elem.html(jQuery.i18n.map[elem.data("localize")]);
 				}
 			});
 		}
@@ -108,7 +108,7 @@ $(document).ready(function() {
 					} else if (elem.is("input[type=button]") || elem.is("input[type=submit]")) {
 						elem.attr("value", localizedValue);
 					} else {
-						elem.text(jQuery.i18n.map[elem.data("localize")]);
+						elem.html(jQuery.i18n.map[elem.data("localize")]);
 					}
 				});
 			}
