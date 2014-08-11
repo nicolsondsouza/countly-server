@@ -51,24 +51,7 @@
  
     <!-- use jssor.slider.min.js instead for release -->
     <!-- jssor.slider.min.js = (jssor.core.js + jssor.utils.js + jssor.slider.js) -->
-    <script type="text/javascript" src="/javascripts/slider_js/jssor.core.js"></script>
-    <script type="text/javascript" src="/javascripts/slider_js/jssor.utils.js"></script>
-    <script type="text/javascript" src="/javascripts/slider_js/jssor.slider.js"></script>
-    <script>
-        jssor_slider2_starter = function (containerId) {
-            var options = {
-                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
-                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
-                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
-                $DragOrientation : 0,
-                }
-           
-
-            var jssor_slider2 = new $JssorSlider$(containerId, options);
-            // ScaleSlider();
-            // $JssorUtils$.$AddEvent(window, "load", ScaleSlider);            
-        };
-    </script>
+    
     <!-- Jssor Slider Begin -->
     <!-- You can move inline styles to css file or css block. -->
     <div id="slider2_container" style=" ">
@@ -76,21 +59,22 @@
         <!-- Slides Container -->
         <div id="slider_inner" u="slides" style="">
             <div class="slider_items">
-                <div style="width:210px; height:210px; float:left; overflow: hidden;">  <img width="210px" draggable="false" height="210px" src="/images/dashboard/dashboard.png"/></div>
-                <div style="width:210px; height:210px; overflow: hidden; color:white;float:right ; background-color:#1A1A1A" data-localize="slider.body1"></div>
-                <!-- <div u="thumb">Banner Rotator</div> -->
+                <div style="width:210px; height:210px; float:left; overflow: hidden;"> 	<img width="210px" draggable="false" height="210px" src="/images/dashboard/dashboard.png"/>
+                </div>
+                <div style="width:210px; height:210px; overflow: hidden; color:white;float:right ; background-color:#1A1A1A" data-localize="slider.dashboard">
+                	
+                </div>
+                
             </div>
             <div> 
                 <div style="width:210px; height:210px; float:left; overflow: hidden;"><img width="210px" draggable="false" height="210px" src="/images/dashboard/enterprise.png"/></div>
-                <div style="width:210px; overflow: hidden; height:210px; color:white;float:right; background-color:#1A1A1A" data-localize="slider.body2">
+                <div style="width:210px; overflow: hidden; height:210px; color:white;float:right; background-color:#1A1A1A" data-localize="slider.enterprise">
                 	
                 </div>
-                <!-- <div u="thumb">Banner Rotator</div> -->
             </div>
             <div>
                 <div style="width:210px;float:left; overflow: hidden;"><img width="210px" height="210px" draggable="false" src="/images/dashboard/funnels.png"/></div>
-                <div style="width:210px; overflow: hidden;  height:210px; color:white;float:right; background-color:#1A1A1A" data-localize="slider.body3"></div>
-                <!-- <div u="thumb">Banner Rotator</div> -->
+                <div style="width:210px; overflow: hidden;  height:210px; color:white;float:right; background-color:#1A1A1A" data-localize="slider.funnels"></div>
             </div>
             
         </div>
@@ -139,6 +123,24 @@
 	<script language="javascript" type="text/javascript" src="/javascripts/utils/store+json2.min.js"></script>
 	<script language="javascript" type="text/javascript" src="/javascripts/utils/jquery.i18n.properties-min-1.0.9.js"></script>
 	<script language="javascript" type="text/javascript" src="/javascripts/pre-login.js"></script>
+	<script type="text/javascript" src="/javascripts/slider_js/jssor.core.js"></script>
+    <script type="text/javascript" src="/javascripts/slider_js/jssor.utils.js"></script>
+    <script type="text/javascript" src="/javascripts/slider_js/jssor.slider.js"></script>
+    <script>
+        jssor_slider2_starter = function (containerId) {
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 4000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $DragOrientation : 0,
+                }
+           
+
+            var jssor_slider2 = new $JssorSlider$(containerId, options);
+            // ScaleSlider();
+            // $JssorUtils$.$AddEvent(window, "load", ScaleSlider);            
+        };
+    </script>
 	<script>
 		$(document).ready(function() {
 			<% if (message){ %>
